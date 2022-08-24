@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@mui/material";
+import { Provider } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import CartPage from "./Components/cartpage/CartPage";
+import Footer from "./Components/footer/Footer";
+import Home from "./Components/Homepage/Home";
+import ItemsInfo from "./Components/itemsInfo/ItemsInfo";
+import Navbar from "./Components/navbar/Navbar";
+import Products from "./Components/products/Products";
+import {store} from './Redux/store'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+  <Provider store={store}>
+    <Navbar />
+    <Box minHeight='calc(100vh - 64px - 169px)' >
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/products/:id" element={<ItemsInfo />} />
+      <Route path="/cartpage" element={<CartPage />} />
+      <Route path="/Products" element={<Products />} />
+    </Routes>
+    </Box>
+    <Footer />
+  </Provider>
+  </>
   );
 }
 

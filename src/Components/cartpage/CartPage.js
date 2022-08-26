@@ -5,7 +5,22 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import {quantityItem} from '../../Helper/func'
 import {  decrease, increase, remove,checkOut,clear } from '../../Redux/cart/cartAction';
 import { Link } from 'react-router-dom';
+import {styled} from '@mui/material/styles'
 
+
+const CustomButton = styled(Button)`
+
+background-color: #2C3639;
+&:hover{
+   background-color: #f3f3f3;
+   color:#2C3639;
+}
+
+@media screen and (max-width:400px){
+    width: 40px;
+    font-size: 10px;
+}
+`
 
 const CartPage = () => {
 
@@ -14,8 +29,8 @@ const CartPage = () => {
     console.log(items)
   return (
     <Container maxWidth="xl">
-        <Grid container>
-            <Grid item xs={12} md={6} m={10} >
+        <Grid container display="flex" justifyContent="center" alignItems="center" >
+            <Grid item xs={12} md={6} m={10} alignItems="center" >
         <TableContainer component={Paper} >
             <Table sx={{minHeight:"650px"}} aria-label="simple table" >
                 <TableHead>
@@ -40,7 +55,7 @@ const CartPage = () => {
                             <TableRow key={item.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                                 <TableCell component="th" scope="row"><Link to={`/products/${item.id}`} > <img src={item.image} style={{width:"50px",height:"50px",borderRadius:"50%"}} /></Link> </TableCell>
                                 <TableCell sx={{fontSize:"10px"}} >{item.title}</TableCell>
-                                <TableCell>$ {item.price*item.quantity}</TableCell>
+                                <TableCell>${item.price*item.quantity}</TableCell>
                                 <TableCell align='right' >
                                     <Box display="flex" width="100%" justifyContent="space-between" alignItems="center" >
                                     {
@@ -68,8 +83,8 @@ const CartPage = () => {
                 <Typography>${items.total}</Typography>
                 </Box>
                 <Box px={2} py={5}display="flex" justifyContent="space-evenly" >
-                    <Button variant='contained' size='small' onClick={()=>dispatch(checkOut())} >CheckOut</Button>
-                    <Button variant='contained' size='small' onClick={()=>dispatch(clear())} >Clear All </Button>
+                    <CustomButton variant='contained' size='small' onClick={()=>dispatch(checkOut())} >CheckOut</CustomButton>
+                    <CustomButton variant='contained' size='small' onClick={()=>dispatch(clear())} >Clear All </CustomButton>
                 </Box>
                 {items.checkOut &&  <Typography px={5} pb={3} >thank you For Buying please back to home</Typography> }
                 {!items.counter  && <Typography px={5} pb={3} ><Link to="/" style={{color:"black",textDecoration:"none"}} >Back To Home</Link></Typography> }

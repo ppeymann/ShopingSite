@@ -28,7 +28,7 @@ const Home = () => {
   return (
       <>
     <Container maxWidth="lg" >
-    <Box mt={2} width={.9} sx={{padding:"30px 50px" , marginRight:"100px"}} flex={1}  >
+    <Box mt={2} >
     <Divider variant='middle' >New Items</Divider>
     <Swiper
   spaceBetween={5}

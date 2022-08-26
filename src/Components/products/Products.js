@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Pagination } from '@mui/material'
+import { Box, Container, Grid, Pagination,Divider } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getItem } from '../../Redux/products/productsAction'
@@ -25,6 +25,9 @@ const Products = () => {
 
   return (
     <Container>
+        <Divider sx={{marginTop:"10px"}} >
+            Products
+        </Divider>
         <Grid container>
         {
             cartsInPage.map(cart=>(

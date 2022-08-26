@@ -13,7 +13,7 @@ const CardSlider = ({image , title , id , price , rate , item}) => {
   const dispatch = useDispatch()
 
   return (
-      <Paper sx={{padding:"10px 20px" , margin:"20px" , display:'flex' , flexDirection:'column' , width:"80%" , borderRadius:"8px"}} elevation={5} >
+      <Paper sx={{padding:"10px 20px", marginLeft:"5px",marginY:"10px" , display:'flex' , flexDirection:'column' , width:"80%" , borderRadius:"8px"}} elevation={5} >
           <img src={image} style={{width:"150px", alignSelf:"center" , height:"150px" , marginBottom:"30px"}} />
           <Divider />
           <Typography component="p" variant="h6" mt={2} fontFamily="Arial" >{title.split(' ')[0]+title.split(' ')[1]+title.split(' ')[2]}</Typography>

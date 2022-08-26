@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <Box variant="div" bgcolor={`#2C3639`} px={20} py={2}  >
+    <Box bgcolor={`#2C3639`}  >
         <Container maxWidth="xl">
-            <Grid container alignItems="center" justifyContent="space" >
+            <Grid container alignItems="center" justifyContent="space-between" >
                 <Grid container item xs={12} md={6}>
                     <Grid item p={2} xs={12} >
                         <Link style={{textDecoration:'none' , color:"#fff" , fontSize:"21px" , fontFamily:"Arial"}} to="/">Home</Link>

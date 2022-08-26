@@ -27,7 +27,7 @@ const SliderCato = () => {
 
     
   return (
-    <Box mt={10} width={.9} sx={{paddingLeft:"20px"}} >
+    <Box mt={10}>
     <Divider variant='middle' >Jelewery</Divider>
     <Swiper
   spaceBetween={5}

@@ -27,8 +27,8 @@ const SliderCato = () => {
 
     
   return (
-    <Box mt={10}>
-    <Divider variant='middle' >Jelewery</Divider>
+    <Box my={10}>
+    <Divider variant='middle' sx={{marginBottom:"15px"}} >Jelewery</Divider>
     <Swiper
   spaceBetween={5}
   slidesPerView={1}

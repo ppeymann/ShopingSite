@@ -29,7 +29,7 @@ const Home = () => {
       <>
     <Container maxWidth="lg" >
     <Box mt={2} >
-    <Divider variant='middle' >New Items</Divider>
+    <Divider variant='middle' sx={{marginBottom:"15px"}} >New Items</Divider>
     <Swiper
   spaceBetween={5}
   slidesPerView={1}

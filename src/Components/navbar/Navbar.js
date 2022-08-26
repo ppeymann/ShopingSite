@@ -58,7 +58,7 @@ const Navbar = () => {
     >
         <Box p={2} width="200px" height="100vh" textAlign="center" display="flex" flexDirection="column" sx={{backgroundColor:"#2A0944"}} >
             {pages.map(page=>(
-          <Link style={{textDecoration:"none", color:"#fff" , marginTop:"50px"}} key={page} to={`${page==="Home"?'':`${page}`}`}>{page==="contactus"?"Contact us":`${page}`}</Link>))}
+          <Link onClick={()=>setOpen(false)} style={{textDecoration:"none", color:"#fff" , marginTop:"50px"}} key={page} to={`${page==="Home"?'':`${page}`}`}>{page==="contactus"?"Contact us":`${page}`}</Link>))}
         </Box>
     </Drawer>
         </Container>
